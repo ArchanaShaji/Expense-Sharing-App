@@ -1,6 +1,6 @@
 <h1>Create New Expense</h1>
 
-<%= form_with model: @expense, url: expenses_path, method: :post, local: true do |f| %>
+<%= form_with(model: @expense, url: expenses_path, method: :post, local: true) do |f| %>
   <%= render :partial => "form", :object => f %>
   <%= f.submit "Create" %>
 <% end %>

@@ -2,11 +2,11 @@
 <%= form.text_field :amount %><br />
 <br />
 <%= form.label :Partner %><br />
-<%= form.collection_select :partner, Partner.all,:id,:partner_name, include_blank: true %> <br />
+<%= form.collection_select :partner_id, Partner.all,:id,:partner_name, include_blank: true %> <br />
 <br />
 <%= form.label :Category %><br />
-<%= form.collection_select :category, Category.all,:id,:item, include_blank: true %> <br />
-<br />
-<%= form.label :Currency %><br />
-<%= form.collection_select :currency, Currency.all,:id,:currency_name, include_blank: true %> 
+<%= form.collection_select :category_id, Category.all,:id,:item, include_blank: true %> <br />
+ 
+<%= form.hidden_field :user_id, value: @user %>
+  
 <br />

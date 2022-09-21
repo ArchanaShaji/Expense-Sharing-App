@@ -1,11 +1,11 @@
 class ExpensesController < ApplicationController
 
 	def index
-		@user = current_user
+		@user = current_user.id 
   	end
 
 	def create
-	    @expense = Expense.new(expense_params)
+	    @expense = Expense.create!(expense_params)
 
 	    if @expense.save
 	      redirect_to @expense
@@ -17,7 +17,7 @@ class ExpensesController < ApplicationController
 	 private
 
 	  def expense_params
-	    params.require(:expense).permit(:amount, :user_id, :partner_id, :category_id, :currency_id
+	    params.permit(:amount, :user_id, :partner_id, :category_id
 	    )
 	  end
 end
